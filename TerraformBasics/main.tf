@@ -8,7 +8,7 @@ terraform {
     }
 
   backend "azurerm" {
-    resource_group_name   = "NG_App-infra"
+    resource_group_name   = "NG_App-Repo"
     storage_account_name  = "ngapp01tstate"
     container_name        = "tstate"
     key                   = "terraform.tfstate"
