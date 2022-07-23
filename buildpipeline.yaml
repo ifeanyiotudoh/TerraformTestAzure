@@ -4,7 +4,7 @@ trigger:
 pool:
   name: Azure Pipelines
   vmImage: 'vs2017-win2016'
-  
+
 steps:
 - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
   displayName: 'Use Terraform latest'
@@ -12,20 +12,21 @@ steps:
 - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
   displayName: 'Terraform : INIT'
   inputs:
-    backendServiceArm: 'Jonnychipz-TFSPN'
-    backendAzureRmResourceGroupName: 'jonnychipz-infra'
-    backendAzureRmStorageAccountName: jonnychipztstate
+    backendServiceArm: 'ngapp-SPN'
+    backendAzureRmResourceGroupName: 'NG_App-infra'
+    backendAzureRmStorageAccountName: ngapp01tstate
     backendAzureRmContainerName: tstate
-    backendAzureRmKey: '77Q4LUB5o9wRdbPYDt+0kGZP+L8Sj9E/FNXg7lZBQS5z3mLod5cyan4wA19CR1SmlqIRUFQfhuQrPVaGzNhjGw=='
+    backendAzureRmKey: '{2a/EjyAxIlQ/fgE2eE81n+z0pkQm45LFLkQoVVJpTXPA64+ntla+P39eJ1LQlQLHK3OSle5RMk//+AStg+68JQ==}"'
 
 - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
   displayName: 'Terraform : PLAN'
   inputs:
     command: plan
-    environmentServiceNameAzureRM: 'Jonnychipz-TFSPN'
+    environmentServiceNameAzureRM: 'ngapp-SPN'
 
 - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
   displayName: 'Terraform : VAL & APPLY'
   inputs:
     command: apply
-    environmentServiceNameAzureRM: 'Jonnychipz-TFSPN'
+    environmentServiceNameAzureRM: 'ngapp-SPN'
+
