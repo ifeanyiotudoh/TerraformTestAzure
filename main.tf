@@ -24,7 +24,7 @@ provider "azurerm" {
 data "azurerm_client_config" "current" {}
 # Create our Resource Group - Jonnychipz-RG
 resource "azurerm_resource_group" "rg" {
-  name     = "NG_App-infra-app01"
+  name     = "NG_App-infra"
   location = "UK South"
 }
 # Create our Virtual Network - Jonnychipz-VNET
