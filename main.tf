@@ -1,6 +1,6 @@
 terraform {
   backend "azurerm" {
-    resource_group_name  = "NG_App-infra"
+    resource_group_name  = "NG_App-infra-repo"
     storage_account_name = "ngapp01tstate"
     container_name       = "tstate"
     key                  = "{2a/EjyAxIlQ/fgE2eE81n+z0pkQm45LFLkQoVVJpTXPA64+ntla+P39eJ1LQlQLHK3OSle5RMk//+AStg+68JQ==}"
